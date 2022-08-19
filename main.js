@@ -14,20 +14,21 @@ function binarySearch(arr, val){
 
     if(trying < val){
         el0 = middle + 1;
-        arr_new = arr.slice(indexOf(el0),arr.length - 1);
-        return binarySearch(arr_new,val);
+        arr = arr.slice(Array.from(arr).indexOf(el0),arr.length);
+        console.log("novo array: "+arr)
+        binarySearch(arr,val);
 
     }
     if(trying > val){
         elLast = middle - 1;
-        arr_new = arr.slice(0,elLast);
-        return binarySearch(arr_new,val);
+        arr = arr.slice(0,elLast);
+        console.log("novo array: "+arr)
+        binarySearch(arr,val);
 
     }
     if(trying === val){
-        return arr.indexOf(middle);
+        return console.log("I've found it!");
     }
-    return "No number";
 
 }
 
